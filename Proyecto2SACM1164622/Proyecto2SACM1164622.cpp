@@ -237,7 +237,12 @@ string getLineWrite(Sticker* looking)
     {
         marcada = "Si";
     }
-    string result = code + "," + looking->get_name() + "," + marcada + "," + to_string(looking->get_appeareances()-1) + "\n";
+    int apariciones = looking->get_appeareances() - 1;
+    if (apariciones < 0) 
+    {
+        apariciones = 0;
+    }
+    string result = code + "," + looking->get_name() + "," + marcada + "," + to_string(apariciones) + "\n";
     return result;
 }
 
